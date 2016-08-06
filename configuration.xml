@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sex name="男朋友" param="m">
+        <age from="25" to="40">
+            <city id="11">北京</city>
+            <city id="42">湖北</city>
+        </age>
+    </sex>
+
+    <sex name="女朋友" param="f">
+        <age from="20" to="28">
+            <city id="11">北京</city>
+            <city id="42">湖北</city>
+        </age>
+    </sex>
+</config>
