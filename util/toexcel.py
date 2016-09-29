@@ -43,9 +43,12 @@ def write_excel(lists, filename):
     ws.cell(row=1, column=10).value = '简要介绍'
     ws.cell(row=1, column=11).value = '择偶标准'
     ws.cell(row=1, column=12).value = '用户标签'
+    ws.cell(row=1, column=13).value = '省份'
+    ws.cell(row=1, column=14).value = '性别'
 
     rownum = 2
-
+    gender_str = filename.split("-")[0].replace("性用户", "").strip()
+    province_str = filename.split("-")[1].strip()
     for each_item in lists:
         info_list = each_item.get('userInfo')
         for each_job_info_obj in info_list:
@@ -63,6 +66,8 @@ def write_excel(lists, filename):
             ws.cell(row=rownum, column=11).value = each_job_info_obj['matchCondition']
             ws.cell(row=rownum, column=12).value = BeautifulSoup(each_job_info_obj['randListTag'],
                                                                  'html.parser').find('span').get_text()
+            ws.cell(row=rownum, column=13).value = province_str
+            ws.cell(row=rownum, column=14).value = gender_str
             # except:
             #     pass
             rownum += 1
