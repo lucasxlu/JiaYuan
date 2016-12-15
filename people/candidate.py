@@ -1,5 +1,7 @@
 class Candidate():
-    def __init__(self, uid, nickname, age, height, image, marriage, education, work_location, work_sublocation, shortnote, userIcon):
+    def __init__(self, uid=0, nickname='', age=0, height=0, image='', marriage='', education='', work_location='',
+                 work_sublocation='',
+                 shortnote='', matchCondition='', randListTag='', province='', gender=''):
         self.uid = uid
         self.nickname = nickname
         self.age = age
@@ -10,4 +12,13 @@ class Candidate():
         self.work_location = work_location
         self.work_sublocation = work_sublocation
         self.shortnote = shortnote
-        self.userIcon = userIcon
+        self.matchCondition = matchCondition
+        self.randListTag = randListTag
+        self.province = province
+        self.gender = gender
+
+    def __str__(self):
+        return "{ " + str(self.uid) + " ;" + self.nickname + " ;" + str(self.age) + " ;" + str(
+            self.height) + " ;" + self.image + " ;" + self.marriage + " ;" + self.education + " ;" \
+               + self.work_location + " ;" + self.work_sublocation + " ;" + self.shortnote + " ;" + self.matchCondition + " ;" + self.randListTag + " ;" + self.province \
+               + " ;" + str(self.gender) + " }"
