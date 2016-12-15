@@ -10,24 +10,27 @@ from people.candidate import Candidate
 
 
 def download_avatar(candidate, download_dir):
-    if not os.path.exists(download_dir + os.path.sep + str(candidate.gender) + os.path.sep + str(candidate.province)):
-        os.mkdir(download_dir + os.path.sep + str(candidate.gender) + os.path.sep + str(candidate.province))
+    image_dir = download_dir + '/' + str(candidate.gender) + '/' + str(candidate.province)
+    if not os.path.exists(image_dir):
+        os.makedirs(image_dir)
 
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2882.4 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2882.4 "
+                      "Safari/537.36",
         "Accept - Encoding": "gzip, deflate, sdch"
     }
-    response = requests.get(candidate.image, headers=headers)
+
+    response = requests.get(candidate.image, headers=headers, timeout=20)
     if response.status_code == 200:
-        with open(download_dir, mode='wb') as f:
-            f.write(BytesIO(response.content))
+        with open(image_dir + '/' + str(candidate.uid) + '.' + candidate.image.split(".")[len(candidate.image.split(".")) - 1], mode='wb') as f:
+            f.write(response.content)
             f.flush()
             f.close()
     elif response.status_code == 403:
         print('Access Denied!')
     else:
-        print('ERROR!')
+        print(str(response.status_code) + ' ;URL is ' + candicate.image)
 
 
 def read_excel(excel_path):
@@ -45,10 +48,12 @@ def read_excel(excel_path):
                               randListTag=ws.cell(row=i, column=12).value,
                               province=ws.cell(row=i, column=13).value, gender=ws.cell(row=i, column=14).value)
         candidate_list.append(candidate)
-        print(candidate)
+        # print(candidate)
 
     return candidate_list
 
 
 if __name__ == '__main__':
-    read_excel("D:/JiaYuan_Excel/女性用户-北京.xlsx")
+    candidate_list = read_excel("D:/JiaYuan_Excel/女性用户-湖北.xlsx")
+    for candicate in candidate_list:
+        download_avatar(candicate, 'd:/JiaYuan_Avatar')
