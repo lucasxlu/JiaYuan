@@ -24,5 +24,5 @@ def read_all_textline(text_path):
 
 
 if __name__ == '__main__':
-    text = read_all_textline('D:/JiaYuan_BasicInfo/requirement/female/matchcondition-hb.txt')
+    text = read_all_textline('D:/JiaYuan_BasicInfo/requirement/male/matchcondition-hb.txt')
     segment_text(text)
