@@ -21,16 +21,21 @@ def download_avatar(candidate, download_dir):
         "Accept - Encoding": "gzip, deflate, sdch"
     }
 
-    response = requests.get(candidate.image, headers=headers, timeout=20)
-    if response.status_code == 200:
-        with open(image_dir + '/' + str(candidate.uid) + '.' + candidate.image.split(".")[len(candidate.image.split(".")) - 1], mode='wb') as f:
-            f.write(response.content)
-            f.flush()
-            f.close()
-    elif response.status_code == 403:
-        print('Access Denied!')
-    else:
-        print(str(response.status_code) + ' ;URL is ' + candicate.image)
+    try:
+        response = requests.get(candidate.image, headers=headers, timeout=30)
+        if response.status_code == 200:
+            with open(image_dir + '/' + str(candidate.uid) + '.' + candidate.image.split(".")[
+                        len(candidate.image.split(".")) - 1], mode='wb') as f:
+                f.write(response.content)
+                f.flush()
+                f.close()
+        elif response.status_code == 403:
+            print('Access Denied!')
+        else:
+            print(str(response.status_code) + ' ;URL is ' + candicate.image)
+    except:
+        print('Oops...There is sth wrong...')
+        pass
 
 
 def read_excel(excel_path):
@@ -54,6 +59,6 @@ def read_excel(excel_path):
 
 
 if __name__ == '__main__':
-    candidate_list = read_excel("D:/JiaYuan_Excel/女性用户-湖北.xlsx")
+    candidate_list = read_excel("D:/JiaYuan_Excel/女性用户-重庆.xlsx")
     for candicate in candidate_list:
         download_avatar(candicate, 'd:/JiaYuan_Avatar')
