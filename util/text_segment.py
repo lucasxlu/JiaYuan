@@ -14,6 +14,7 @@ def segment_text(text):
     for tag in tags:
         print(str(tag[0]) + "\t" + str(tag[1]))
 
+
 def read_all_textline(text_path):
     text = ''
     with open(text_path, mode='rt') as f:
@@ -24,5 +25,5 @@ def read_all_textline(text_path):
 
 
 if __name__ == '__main__':
-    text = read_all_textline('D:/JiaYuan_BasicInfo/requirement/male/matchcondition-hb.txt')
+    text = read_all_textline('D:/JiaYuan_BasicInfo/intro/male_intro.txt')
     segment_text(text)
