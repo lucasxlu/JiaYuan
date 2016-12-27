@@ -3,7 +3,7 @@
 ## Introduction
 * scrape data from [shijijiayuan](http://www.jiayuan.com) with BeautifulSoup and requests in Python3.5
 * machine learning algorithm in R
-* visualize data and generate report in in　MS PowerPoint2016, R ggplot2, TAGUL
+* visualize data and generate report in in MS PowerPoint2016, R ggplot2, TAGUL
 
 ## Prerequisites
 * Python3.X (Python 3.5 is recommended)
@@ -15,8 +15,8 @@
 ## Results
 * Basic statistics info
 
-  > ![cover](https://pic1.zhimg.com/v2-e2ff46edde68dd4f92dbd8bbfdf16438_b.jpg)
-    ![img1](https://pic3.zhimg.com/v2-5dd2696a574f86e982dc1e949078389e_b.jpg)
+  > ![cover](https://pic1.zhimg.com/v2-e2ff46edde68dd4f92dbd8bbfdf16438_r.jpg)
+    ![img1](https://pic3.zhimg.com/v2-5dd2696a574f86e982dc1e949078389e_r.jpg)
     ![img2](https://pic3.zhimg.com/v2-5b32e06f4929a58a75f1c3ffaf1737aa_b.jpg)
     ![img3](https://pic4.zhimg.com/v2-6aafb7fd0e1b69dff1cd5b4539f8e7a7_r.jpg)
   
