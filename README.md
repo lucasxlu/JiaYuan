@@ -20,9 +20,10 @@
     ![img2](https://pic3.zhimg.com/v2-5b32e06f4929a58a75f1c3ffaf1737aa_b.jpg)
     ![img3](https://pic4.zhimg.com/v2-6aafb7fd0e1b69dff1cd5b4539f8e7a7_r.jpg)
   
- * With NLP
+* With NLP
+
   >
-    ![img5](https://pic1.zhimg.com/v2-032d8b8547aa4af1cc430abe2934e018_b.jpg)
+    ![img5](https://pic1.zhimg.com/v2-032d8b8547aa4af1cc430abe2934e018_r.jpg)
     ![img6](https://pic4.zhimg.com/v2-53d55b825642ab36f5d12d9d6cc99e73_r.jpg)
     ![img7](https://pic3.zhimg.com/v2-d53117d217ad953e639bd3bd85f82ade_r.jpg)
     ![img8](https://pic4.zhimg.com/v2-150bc204f1d032c2819be1724a7e45d7_b.jpg)
