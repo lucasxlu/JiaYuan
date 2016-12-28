@@ -17,8 +17,7 @@
 
   > ![cover](https://pic1.zhimg.com/v2-e2ff46edde68dd4f92dbd8bbfdf16438_r.jpg)
     ![img1](https://pic3.zhimg.com/v2-5b32e06f4929a58a75f1c3ffaf1737aa_r.jpg)
-    ![img2](https://pic3.zhimg.com/v2-5b32e06f4929a58a75f1c3ffaf1737aa_r.jpg)
-    ![img3](https://pic4.zhimg.com/v2-6aafb7fd0e1b69dff1cd5b4539f8e7a7_r.jpg)
+    ![img2](https://pic4.zhimg.com/v2-6aafb7fd0e1b69dff1cd5b4539f8e7a7_r.jpg)
   
 * With NLP
 
