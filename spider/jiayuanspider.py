@@ -1,7 +1,9 @@
 import requests
 import logging
 import json
-from time import sleep
+
+import time
+import os
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -41,7 +43,11 @@ def get_maxpagenum(sex, cityId, age_from, age_to, pagenum=1):
         logging.error('对方拒绝了您的请求，并向您扔了一个吻')
 
 
-def crawl(sex, cityId, age_from, age_to):
+def crawl(sex, cityId, age_from, age_to, datadir):
+    if not os.path.exists(datadir + os.path.sep + sex + os.path.sep + str(cityId)) and not os.path.isdir(
+                                            datadir + os.path.sep + sex + os.path.sep + str(cityId)):
+        os.makedirs(datadir + os.path.sep + sex + os.path.sep + str(cityId))
+
     maxpagenum = get_maxpagenum(sex, cityId, age_from, age_to, 1)
 
     pagenum = 1
@@ -72,7 +78,8 @@ def crawl(sex, cityId, age_from, age_to):
             logging.debug(json_raw)
 
             '''write out to file'''
-            with open('D:/世纪佳缘/女性用户/吉林/' + str(pagenum) + '.json', mode='w', encoding='utf-8') as f:
+            with open(datadir + os.path.sep + sex + os.path.sep + str(cityId) + os.path.sep + str(pagenum) + '.json',
+                      mode='w', encoding='utf-8') as f:
                 f.write(str(json_raw['userInfo']))
                 f.flush()
                 f.close()
@@ -87,4 +94,6 @@ def crawl(sex, cityId, age_from, age_to):
 
 
 if __name__ == '__main__':
-    crawl('f', 22, 20, 28)
+    crawl('f', 42, 20, 28, '/home/lucasx/jy_data')
+    time.sleep(30)
+    crawl('m', 42, 20, 28, '/home/lucasx/jy_data')

@@ -71,7 +71,7 @@ def write_excel(lists, filename):
             # except:
             #     pass
             rownum += 1
-    wb.save('d:/' + filename + '.xlsx')
+    wb.save('/home/lucasx/' + filename + '.xlsx')
     logging.info('Excel生成成功!')
 
 

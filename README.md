@@ -30,5 +30,6 @@
 ## The Next
   Next, I want to train this spider with the avatar image set based on Computer Vision, in order to enable this spider has       ability to rank your face. Anyone who is interested in computer vision, deep learning please commit your issues.
   
-  For more details, please visit my article at [Zhihu](https://zhuanlan.zhihu.com/p/24515034)
+  For more details, please visit my article at [Zhihu](https://zhuanlan.zhihu.com/p/24515034).
+
   With pleasure!
